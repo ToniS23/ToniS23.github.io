@@ -9,12 +9,20 @@
             font-family: Arial, sans-serif;
             margin: 0;
             background-color: #f5f5f5;
+            color: #000;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
             height: 100vh;
             padding-top: 50px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
         }
 
         .title {
@@ -55,6 +63,7 @@
             background-color: #fff;
             min-height: 200px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
 
         .content h2 {
@@ -79,6 +88,45 @@
         .links a:hover {
             text-decoration: underline;
         }
+
+        /* Dark Mode Styles for Tabs and Content */
+        body.dark-mode .tab {
+            background-color: #333;
+            color: #fff;
+            border-color: #444;
+        }
+
+        body.dark-mode .tab.active {
+            background-color: #0056b3;
+        }
+
+        body.dark-mode .content {
+            background-color: #1e1e1e;
+            color: #fff;
+            border-color: #444;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        body.dark-mode .links a {
+            color: #66b2ff;
+        }
+
+        #dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        body.dark-mode #dark-mode-toggle {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -90,7 +138,9 @@
     </div>
     <div class="content" id="tab-content">
         <h2>About Me</h2>
-        <p>Hello! I'm Tony, a passionate cybersecurity enthusiast. I specialize in penetration testing, vulnerability analysis, and security research. This site is where I track my progress, showcase my skills, and share my experiences in the field of cybersecurity.</p>
+        <p>I am a recent graduate with both a Bachelor's and Master's degree in Mechatronics and Robotics Engineering from the Technical University of Cluj-Napoca. With a strong academic background and a growing passion for cybersecurity, particularly in penetration testing, I am dedicated to advancing my expertise in identifying and mitigating security vulnerabilities.
+
+        This blog is a space where I will share my professional journey, document my progress, and provide insights into my work in cybersecurity. Here, I will regularly update with projects, technical write-ups, and other relevant content as I continue to develop my skills and contribute to the field.</p>
         <div class="links">
             <h3>Related Links:</h3>
             <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a>
@@ -98,6 +148,8 @@
             <a href="https://twitter.com/your-twitter-profile" target="_blank">Twitter</a>
         </div>
     </div>
+
+    <button id="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
 
     <script>
         function showTabContent(tab) {
@@ -115,7 +167,9 @@
                 title.innerHTML = 'About Me';
                 content.innerHTML = `
                     <h2>About Me</h2>
-                    <p>Hello! I'm Tony, a passionate cybersecurity enthusiast. I specialize in penetration testing, vulnerability analysis, and security research. This site is where I track my progress, showcase my skills, and share my experiences in the field of cybersecurity.</p>
+                    <p>I am a recent graduate with both a Bachelor's and Master's degree in Mechatronics and Robotics Engineering from the Technical University of Cluj-Napoca. With a strong academic background and a growing passion for cybersecurity, particularly in penetration testing, I am dedicated to advancing my expertise in identifying and mitigating security vulnerabilities.
+
+                    This blog is a space where I will share my professional journey, document my progress, and provide insights into my work in cybersecurity. Here, I will regularly update with projects, technical write-ups, and other relevant content as I continue to develop my skills and contribute to the field.</p>
                     <div class="links">
                         <h3>Related Links:</h3>
                         <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a>
@@ -145,6 +199,24 @@
                         <li>Write-Up 3: <a href="#">Machine Name</a> - Brief description of the machine and what was learned.</li>
                     </ul>
                 `;
+            }
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            
+            // Save the user's preference in localStorage
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load the user's preference from localStorage
+        window.onload = function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-mode');
             }
         }
     </script>
