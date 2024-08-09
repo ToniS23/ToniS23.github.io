@@ -1,8 +1,152 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tony's Cybersecurity Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            padding-top: 50px;
+        }
+
+        .title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .tab:hover {
+            background-color: #ddd;
+        }
+
+        .tab.active {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .content {
+            width: 60%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            min-height: 200px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h2 {
+            margin-top: 0;
+        }
+
+        .content p {
+            line-height: 1.6;
+        }
+
+        .links {
+            margin-top: 20px;
+        }
+
+        .links a {
+            display: block;
+            color: #007bff;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
 <body>
-<h1>Avem de toate</h1>
-<p>Nu nu nu si iarasi...</p>
-<p>NU</p>
+    <div class="title" id="main-title">Tony's Cybersecurity Portfolio</div>
+    <div class="tabs">
+        <div class="tab active" onclick="showTabContent('about-me')">About Me</div>
+        <div class="tab" onclick="showTabContent('projects')">Projects</div>
+        <div class="tab" onclick="showTabContent('write-ups')">Machine Write-Ups</div>
+    </div>
+    <div class="content" id="tab-content">
+        <h2>About Me</h2>
+        <p>Hello! I'm Tony, a passionate cybersecurity enthusiast. I specialize in penetration testing, vulnerability analysis, and security research. This site is where I track my progress, showcase my skills, and share my experiences in the field of cybersecurity.</p>
+        <div class="links">
+            <h3>Related Links:</h3>
+            <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a>
+            <a href="https://github.com/your-github-profile" target="_blank">GitHub</a>
+            <a href="https://twitter.com/your-twitter-profile" target="_blank">Twitter</a>
+        </div>
+    </div>
+
+    <script>
+        function showTabContent(tab) {
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tabElement => {
+                tabElement.classList.remove('active');
+            });
+            
+            event.target.classList.add('active');
+
+            const title = document.getElementById('main-title');
+            const content = document.getElementById('tab-content');
+
+            if (tab === 'about-me') {
+                title.innerHTML = 'About Me';
+                content.innerHTML = `
+                    <h2>About Me</h2>
+                    <p>Hello! I'm Tony, a passionate cybersecurity enthusiast. I specialize in penetration testing, vulnerability analysis, and security research. This site is where I track my progress, showcase my skills, and share my experiences in the field of cybersecurity.</p>
+                    <div class="links">
+                        <h3>Related Links:</h3>
+                        <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/your-github-profile" target="_blank">GitHub</a>
+                        <a href="https://twitter.com/your-twitter-profile" target="_blank">Twitter</a>
+                    </div>
+                `;
+            } else if (tab === 'projects') {
+                title.innerHTML = 'Projects';
+                content.innerHTML = `
+                    <h2>Projects</h2>
+                    <p>Here are some of the projects I've worked on, including penetration tests, vulnerability assessments, and custom security tools:</p>
+                    <ul>
+                        <li>Project 1: <a href="#">Project Name</a> - Brief description of the project.</li>
+                        <li>Project 2: <a href="#">Project Name</a> - Brief description of the project.</li>
+                        <li>Project 3: <a href="#">Project Name</a> - Brief description of the project.</li>
+                    </ul>
+                `;
+            } else if (tab === 'write-ups') {
+                title.innerHTML = 'Machine Write-Ups';
+                content.innerHTML = `
+                    <h2>Machine Write-Ups</h2>
+                    <p>These are detailed write-ups of the machines I've tackled in various CTFs and pentesting labs:</p>
+                    <ul>
+                        <li>Write-Up 1: <a href="#">Machine Name</a> - Brief description of the machine and what was learned.</li>
+                        <li>Write-Up 2: <a href="#">Machine Name</a> - Brief description of the machine and what was learned.</li>
+                        <li>Write-Up 3: <a href="#">Machine Name</a> - Brief description of the machine and what was learned.</li>
+                    </ul>
+                `;
+            }
+        }
+    </script>
 </body>
 </html>
