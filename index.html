@@ -47,7 +47,6 @@
             const content = document.getElementById('tab-content');
 
             if (tab === 'about-me') {
-                title.innerHTML = 'About Me';
                 content.innerHTML = `
                     <h2>About Me</h2>
                     <p>I am a recent graduate with both a Bachelor's and Master's degree in Mechatronics and Robotics Engineering from the Technical University of Cluj-Napoca. With a strong academic background and a growing passion for cybersecurity, particularly in penetration testing, I am dedicated to advancing my expertise in identifying and mitigating security vulnerabilities.
@@ -59,18 +58,16 @@
                     </div>
                 `;
             } else if (tab === 'projects') {
-                title.innerHTML = 'Projects';
                 content.innerHTML = `
                     <h2>Projects</h2>
                     <p>Here are some of the projects I've worked on, including penetration tests, vulnerability assessments, and custom security tools:</p>
                     <ul>
-                        <li>Project 1: <a href="project_1.html">Project Name</a> - Brief description of the project.</li>
+                        <li>Project 1: <a href="project_1.html">This Website</a> - Brief description of the project.</li>
                         <li>Project 2: <a href="#">Project Name</a> - Brief description of the project.</li>
                         <li>Project 3: <a href="#">Project Name</a> - Brief description of the project.</li>
                     </ul>
                 `;
-            } else if (tab === 'write-ups') {
-                title.innerHTML = 'Machine Write-Ups';
+            } else if (tab === 'write-ups') { 
                 content.innerHTML = `
                     <h2>Machine Write-Ups</h2>
                     <p>These are detailed write-ups of the machines I've tackled in various CTFs and pentesting labs:</p>

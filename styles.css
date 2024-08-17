@@ -45,9 +45,8 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-
 .title {
-    font-size: 32px;
+    font-size: 40px;
     margin-bottom: 20px;
     text-align: center;
     padding: 0 15px; /* Padding added for better display on mobile */
@@ -63,8 +62,8 @@ body {
 
 .tab {
     padding: 10px 20px;
-    border: 1px solid #ccc;
-    background-color: #fff;
+    border: 1px solid #000000;
+    background-color: #000000;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s;
@@ -73,11 +72,11 @@ body {
 }
 
 .tab:hover {
-    background-color: #ddd;
+    background-color: #09ff00;
 }
 
 .tab.active {
-    background-color: #007bff;
+    background-color: #000000;
     color: #fff;
 }
 
@@ -87,7 +86,7 @@ body {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: #000000;
     min-height: 200px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
@@ -107,16 +106,28 @@ body {
     margin-top: 20px;
 }
 
+/* Default link style */
 .links a {
     display: block;
-    color: #007bff;
+    color: #09ff00; /* Default link color */
     text-decoration: none;
     margin-bottom: 10px;
     font-size: 16px; /* Adjust font size for mobile */
 }
 
+/* Style for links when hovered over */
 .links a:hover {
     text-decoration: underline;
+}
+
+/* Style for links after they have been visited */
+.links a:visited {
+    color: #d2ffb3; /* Color for visited links */
+}
+
+/* Optional: Style for links while being clicked */
+.links a:active {
+    color: #ff0000; /* Color while the link is being clicked */
 }
 
 /* Dark Mode Styles for Tabs and Content */
@@ -127,7 +138,7 @@ body.dark-mode .tab {
 }
 
 body.dark-mode .tab.active {
-    background-color: #0056b3;
+    background-color: #15ff00a1;
 }
 
 body.dark-mode .content {
@@ -138,7 +149,7 @@ body.dark-mode .content {
 }
 
 body.dark-mode .links a {
-    color: #66b2ff;
+    color: #15ff00a1;
 }
 
 #dark-mode-toggle {
