@@ -32,7 +32,7 @@ button {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Fira Code', monospace;
     margin: 0;
     background-color: #121212;
     color: #ffffff;
@@ -84,7 +84,7 @@ body {
     width: 90%; /* Adjust content width for smaller screens */
     max-width: 800px; /* Set a maximum width for larger screens */
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     border-radius: 5px;
     background-color: #000000;
     min-height: 200px;
@@ -157,7 +157,7 @@ body.dark-mode .links a {
     top: 20px;
     right: 20px;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #ffffff;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -168,6 +168,16 @@ body.dark-mode .links a {
 
 body.dark-mode #dark-mode-toggle {
     background-color: #0056b3;
+}
+
+.simple-list {
+    list-style-type: none; /* Removes default bullets */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+}
+
+.simple-list li {
+    padding: 5px 0; /* Optional: Add some spacing between list items */
 }
 
 /* Media Query for Mobile Devices */
