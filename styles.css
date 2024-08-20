@@ -1,34 +1,9 @@
-/* Ensure the body and html take up the full height */
+/* Global Styles */
 body, html {
     margin: 0;
     padding: 0;
+    height: 100%;
     overflow: hidden;
-    height: 100%;
-}
-
-/* Style the canvas to cover the entire screen */
-#matrixCanvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Move the canvas to the background */
-}
-
-/* Example styles for content that should appear above the canvas */
-.content {
-    position: relative;
-    z-index: 1;
-    color: white;
-    text-align: center;
-    margin-top: 50px;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
 }
 
 body {
@@ -45,30 +20,90 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+/* Canvas Styles */
+#matrixCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Content and Typography */
+.content {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    margin-top: 50px;
+    background-color: #000000;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    min-height: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    text-align: center; /* Center text inside .content */
+}
+
 .title {
     font-size: 40px;
     margin-bottom: 20px;
-    text-align: center;
-    padding: 0 15px; /* Padding added for better display on mobile */
+    padding: 0 15px;
 }
 
-.tabs {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    flex-wrap: wrap; /* Allow tabs to wrap on smaller screens */
-    justify-content: center; /* Center tabs on mobile */
+.content h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.content p, .links a {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.links {
+    margin-top: 20px;
+}
+
+.links a {
+    display: block;
+    color: #09ff00;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.links a:visited {
+    color: #d2ffb3;
+}
+
+.links a:active {
+    color: #ff0000;
+}
+
+/* Button Styles */
+button, .tab, #dark-mode-toggle {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 .tab {
-    padding: 10px 20px;
     border: 1px solid #000000;
     background-color: #000000;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    margin-bottom: 20px;
+    font-size: 16px;
     text-align: center;
-    font-size: 16px; /* Adjust font size for mobile */
+    transition: background-color 0.3s;
 }
 
 .tab:hover {
@@ -80,57 +115,14 @@ body {
     color: #fff;
 }
 
-.content {
-    width: 90%; /* Adjust content width for smaller screens */
-    max-width: 800px; /* Set a maximum width for larger screens */
-    padding: 20px;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    background-color: #000000;
-    min-height: 200px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+.tabs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.content h2 {
-    margin-top: 0;
-    font-size: 24px; /* Adjust font size for mobile */
-}
-
-.content p {
-    line-height: 1.6;
-    font-size: 16px; /* Adjust font size for mobile */
-}
-
-.links {
-    margin-top: 20px;
-}
-
-/* Default link style */
-.links a {
-    display: block;
-    color: #09ff00; /* Default link color */
-    text-decoration: none;
-    margin-bottom: 10px;
-    font-size: 16px; /* Adjust font size for mobile */
-}
-
-/* Style for links when hovered over */
-.links a:hover {
-    text-decoration: underline;
-}
-
-/* Style for links after they have been visited */
-.links a:visited {
-    color: #d2ffb3; /* Color for visited links */
-}
-
-/* Optional: Style for links while being clicked */
-.links a:active {
-    color: #ff0000; /* Color while the link is being clicked */
-}
-
-/* Dark Mode Styles for Tabs and Content */
+/* Dark Mode Styles */
 body.dark-mode .tab {
     background-color: #333;
     color: #fff;
@@ -143,7 +135,6 @@ body.dark-mode .tab.active {
 
 body.dark-mode .content {
     background-color: #1e1e1e;
-    color: #fff;
     border-color: #444;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -152,32 +143,39 @@ body.dark-mode .links a {
     color: #15ff00a1;
 }
 
-#dark-mode-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 10px;
-    background-color: #ffffff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-size: 16px; /* Adjust font size for mobile */
-}
-
 body.dark-mode #dark-mode-toggle {
     background-color: #0056b3;
 }
 
-.simple-list {
-    list-style-type: none; /* Removes default bullets */
-    padding: 0; /* Removes default padding */
-    margin: 0; /* Removes default margin */
+/* List Styles */
+ul {
+    list-style-position: outside; /* Ensure bullets are outside the text block */
+    padding-left: 20px; /* Add padding to accommodate bullets */
+    margin: 0; /* Remove default margin */
 }
 
-.simple-list li {
-    padding: 5px 0; /* Optional: Add some spacing between list items */
+ul li {
+    margin: 5px 0; /* Add spacing between list items */
+}
+
+/* Specific List Styles */
+ul.case-list {
+    list-style-type: disc; /* Default bullet style */
+    list-style-position: outside; /* Bullets outside the text block */
+    padding-left: 20px; /* Space from the left edge */
+}
+
+ul.case-list li {
+    display: list-item; /* Ensure items are displayed as list items */
+}
+
+/* Dark Mode Toggle */
+#dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ffffff;
+    color: #fff;
 }
 
 /* Media Query for Mobile Devices */

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome To My Cybersecurity Portfolio</title>
+    <h5>(turn off dark mode)</h5>
     <!-- Link to the external CSS file -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -16,21 +17,24 @@
     <!-- JavaScript Link Example -->
     <script src="./matrix.js"></script>
 
-
     <div class="title" id="main-title">Welcome To My Cybersecurity Portfolio</div>
     <div class="tabs">
         <div class="tab active" onclick="showTabContent('about-me')">About Me</div>
+        <div class="tab" onclick="showTabContent('blog')">Blog</div>
         <div class="tab" onclick="showTabContent('projects')">Projects</div>
-        <div class="tab" onclick="showTabContent('write-ups')">Machine Write-Ups</div>
+        <div class="tab" onclick="showTabContent('write-ups')">CTF Write-Ups</div>
+        <div class="tab" onclick="showTabContent('certs')">Certifications</div>
     </div>
     <div class="content" id="tab-content">
         <h2>About Me</h2>
-        <p>I am a recent graduate with both a Bachelor's and Master's degree in Mechatronics and Robotics Engineering from the Technical University of Cluj-Napoca.
+        <p>I am a recent graduate with both Bachelor's and Master's degree in Mechatronics and Robotics Engineering from the Technical University of Cluj-Napoca.
             I have always been passionate about hacking but in the past year I started to develop my cybersecurity skills in order to get into penetration testing.
            This blog is a space where I will share my professional journey, document my progress, and provide insights into my work in cybersecurity. Here, I will 
            regularly update with projects, technical write-ups, and other relevant content as I continue to develop my skills and contribute to the field.</p>
         <div class="links">
-            <h3>Related Links:</h3>
+            <h3>Contact</h3>
+            <p>sipos.antoniumarius@gmail.com</p>
+            <h3>Related Links</h3>
             <a href="https://github.com/ToniS23" target="_blank">GitHub</a>
             <a href="https://app.hackthebox.com/profile/1960780" target="_blank">HackTheBox</a>
         </div>
@@ -51,13 +55,15 @@
             if (tab === 'about-me') {
                 content.innerHTML = `
                     <h2>About Me</h2>
-                    <p>I am a recent graduate with both a Bachelor's and Master's degree in Mechatronics and Robotics Engineering from the Technical University of Cluj-Napoca.
+                    <p>I am a recent graduate with both Bachelor's and Master's degree in Mechatronics and Robotics Engineering from the Technical University of Cluj-Napoca.
                      I have always been passionate about hacking but in the past year I started to develop my cybersecurity skills in order to get into penetration testing.
                     This blog is a space where I will share my professional journey, document my progress, and provide insights into my work in cybersecurity.
                      Here, I will regularly update with projects, technical write-ups,
                      and other relevant content as I continue to develop my skills and contribute to the field.</p>
+                    <h3>Contact</h3>
+                    <p>sipos.antoniumarius@gmail.com</p>
                     <div class="links">
-                        <h3>Related Links:</h3>
+                        <h3>Related Links</h3>
                         <a href="https://github.com/ToniS23" target="_blank">GitHub</a>
                         <a href="https://app.hackthebox.com/profile/1960780" target="_blank">HackTheBox</a>
                     </div>
@@ -65,21 +71,41 @@
             } else if (tab === 'projects') {
                 content.innerHTML = `
                     <h2>Projects</h2>
-                    <p>Here are some of the projects I've worked on, including penetration tests, vulnerability assessments, and custom security tools:</p>
-                    <ul>
-                        <li>Project 1: <a href="project_1.html">This Website</a> - Brief description of the project.</li>
+                    <p>Here are some of the projects I've worked on, including custom security tools, Python projects and many more:</p>
+                    <ul class="right-aligned-list">
+                        <li>Project 1: <a href="project_1.html">This Website</a> - Welcome To My Cybersecurity Website! </li>
                         <li>Project 2: <a href="#">Project Name</a> - Brief description of the project.</li>
                         <li>Project 3: <a href="#">Project Name</a> - Brief description of the project.</li>
                     </ul>
                 `;
             } else if (tab === 'write-ups') { 
                 content.innerHTML = `
-                    <h2>Machine Write-Ups</h2>
+                    <h2>CTF Write-Ups</h2>
                     <p>These are detailed write-ups of the machines I've tackled in various CTFs and pentesting labs:</p>
-                    <ul>
-                        <li>Write-Up 1: <a href="#">Machine Name</a> - Brief description of the machine and what was learned.</li>
-                        <li>Write-Up 2: <a href="#">Machine Name</a> - Brief description of the machine and what was learned.</li>
+                    <ul class="right-aligned-list">
+                        <li>Write-Up 1: <a href="#">Nibbles</a> - Brief description of the machine and what was learned.</li>
+                        <li>Write-Up 2: <a href="#">Lame</a> - Brief description of the machine and what was learned.</li>
                         <li>Write-Up 3: <a href="#">Machine Name</a> - Brief description of the machine and what was learned.</li>
+                    </ul>
+                `;
+            } else if (tab === 'blog') { 
+                content.innerHTML = `
+                    <h2>Blog</h2>
+                    <p>Here I will post some case studies</p>
+                    <ul class="right-aligned-list">
+                        <li>Write-Up 1: <a href="#">Case 1</a> - Brief description.</li>
+                        <li>Write-Up 2: <a href="#">Case 2</a> - Brief description.</li>
+                        <li>Write-Up 3: <a href="#">Case 3</a> - Brief description.</li>
+                    </ul>
+                `;
+            } else if (tab === 'certs') { 
+                content.innerHTML = `
+                    <h2>My Certifications</h2>
+                    <p></p>
+                    <ul class="right-aligned-list">
+                        <li>Python Institute: <a href="https://verify.openedg.org/?id=UAQ5.mmjX.Qd6h">Certified Entry-Level Python Programmer</a> - Basic Python scripts and fundamental programming concepts.</li>
+                        <li>Google: <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/R5QB3R62QML5">Google Cybersecurity</a> - Python, Linux, Windows, SQL, IDS/IPS, SIEM.</li>
+                        <li>Cambridge English: <a href="">Cambridge English</a> - Cambridge English Level 2 Certificate in ESOL International(Advanced).</li>
                     </ul>
                 `;
             }
