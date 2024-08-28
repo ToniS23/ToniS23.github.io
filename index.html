@@ -16,7 +16,6 @@
 
     <!-- JavaScript Link Example -->
     <script src="./matrix.js"></script>
-
     <div class="title" id="main-title">Welcome To My Cybersecurity Portfolio</div>
     <div class="tabs">
         <div class="tab active" onclick="showTabContent('about-me')">About Me</div>
@@ -83,7 +82,7 @@
                     <h2>CTF Write-Ups</h2>
                     <p>These are detailed write-ups of the machines I've tackled in various CTFs and pentesting labs:</p>
                     <ul class="right-aligned-list">
-                        <li>Write-Up 1: <a href="#">Nibbles</a> - Brief description of the machine and what was learned.</li>
+                        <li>Write-Up 1: <a href="./nibbles.html">Nibbles</a> - Brief description of the machine and what was learned.</li>
                         <li>Write-Up 2: <a href="#">Lame</a> - Brief description of the machine and what was learned.</li>
                         <li>Write-Up 3: <a href="#">Machine Name</a> - Brief description of the machine and what was learned.</li>
                     </ul>
@@ -115,6 +114,10 @@
         window.onload = function() {
             document.body.classList.add('dark-mode');
         }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js">
+        const markdownExample = "# Hello World\nThis is a test paragraph.";
+        document.getElementById('markdown-content').innerHTML = marked(markdownExample);
     </script>
 </body>
 </html>

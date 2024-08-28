@@ -3,39 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Details - Your Project Name</title>
-    <link rel="stylesheet" href="./styles.css"> <!-- Adjusted path if in a subdirectory -->
+    <title>Markdown Page</title>
+    <!-- Load the marked.js library from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
+    <h1>Markdown Test</h1>
+    <div id="markdown-content">Loading...</div>
 
-    <!-- Canvas for the Matrix effect -->
-    <canvas id="matrixCanvas"></canvas>
-
-    <!-- Main content container -->
-    <div class="content">
-        <!-- Header -->
-        <div class="header">
-            <h1>Project Details</h1>
-        </div>
-
-        <!-- Project Information -->
-        <div class="project-info">
-            <h2>Starting Point Of My Journey</h2>
-            <p><strong>Description:</strong> This project is about learning HTML, CSS, JS and how to put together a website in general.</p>
-            <p><strong>Technologies Used:</strong> Visual Studio Code, HTML, CSS, JavaScript and a bit of "Prompt Engineering" ;)</p>
-            <p><strong>Key Features:</strong></p>
-            <ul class="simple-list"> <!-- Added class 'simple-list' to ensure list styling -->
-                <li>Does it's job</li>
-                <li>Easy to update and maintain</li>
-                <li>No vulnerabilities unless my GitHub account is hacked</li>
-            </ul>
-            <p><strong>Link to Repository:</strong> <a href="https://github.com/ToniS23/ToniS23.github.io" target="_blank">GitHub Repository</a></p>
-        </div>
-
-        <!-- Back to Index Link -->
-        <a href="./index.html" class="back-link">Back to Index</a> <!-- Adjusted path if in a subdirectory -->
-    </div>
-
-    <script src="./matrix.js"></script> <!-- Adjusted path if in a subdirectory -->
+    <script>
+        // Fetch the Markdown file and convert it to HTML
+        fetch('./markdown_test.md') // Adjust the path if needed
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(text => {
+                document.getElementById('markdown-content').innerHTML = marked(text);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+                document.getElementById('markdown-content').innerHTML = 'Failed to load Markdown file.';
+            });
+    </script>
 </body>
 </html>
