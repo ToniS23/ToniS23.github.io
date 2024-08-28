@@ -9,24 +9,11 @@
 </head>
 <body>
     <h1>Markdown Test</h1>
+    <!-- Container for the rendered Markdown content -->
     <div id="markdown-content">Loading...</div>
-
-    <script>
-        // Fetch the Markdown file and convert it to HTML
-        fetch('./markdown_test.md') // Adjust the path if needed
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text();
-            })
-            .then(text => {
-                document.getElementById('markdown-content').innerHTML = marked(text);
-            })
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-                document.getElementById('markdown-content').innerHTML = 'Failed to load Markdown file.';
-            });
-    </script>
 </body>
+<script>
+    // Fetch the Markdown file and convert it to HTML
+    fetch('./markdown_test.md') // Replace with the path to your Markdown file
+</script>
 </html>
